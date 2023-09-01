@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  >
+<head>
+    <title>Form Data</title>
+</head>
+<body>
+    <div class=""  style="display: grid; ">
+    <div style="width: 100%; display: flex; justify-content: center; place-content: center; margin: 60px;"><img src="https://www.marionphysicianassociates.com/book/mhc-book-appointment/common/images/mhc-logo1.jpg"/></div>
+    
+    <h1 style="margin: 30px 0px">Book Appointment</h1>
+    <hr>
+    <p>Are you a New Patient ?: {{new_pas}}</p>
+    <p>Name: {{ name }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Phone: {{ phone }}</p>
+    <p>Office Location: {{ offi_loc }}</p>
+    <p> Available_Date : {{Avail_date}}</p>
+    <p> Available_Date_best_time : {{Av_date_best_time}}</p>
+    <p> Alternate_Date : {{Alter_date}}</p>
+    <p> Alternate_Date_best_time : {{Av_date_best_time}}</p>
+    <p>Select Provider: {{sel_pro}}</p>
+    <p>Select Insurance Type: {{select_insu}}</p>
+    <p>Insurance Member ID: {{insu_mem_id}}</p>
+    <p>Insurance Group ID: {{insu_grp_id}}</p>
+    <p>Any other Information? - Please DO NOT inculde your SSN # / Medical Issues / Refill Requests: {{ message }}</p>
+    <p>How did you hear about us?: {{how_did_you}}</p>
+        <br>
+    <p>I have read and agreed to the Privacy Policy and Terms of use. And that I am at least 13 years or age and have authority to make this appointment.</p>
+    <p> I agree to receiving text messages for feedback requests.</p>
+    <br>
+    <div style="border: 2px solid black;  height: 50px; padding: 5px;">
+    <img src="{{image}}" alt="" width="500" />
+    </div>
+    </div>
+</body>
+</html>

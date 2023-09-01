@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+{% block content %}
+<div class="container mt-60">
+    <div class="row">
+        <div class="col-lg-12 mt-20">
+			<div class="doctor-img text-center" x-width: 100%;
+    height: auto;
+    box-shadow: 7.5px 15px 15px hsl(0deg 0% 0% / 0.27);
+    border-bottom-right-radius: 25px;
+    /* box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);>    
+                <img src="{% get_media_prefix %}{{doc.image}}" class="img-fluid" alt="" style="border: 3px solid #000;
+    box-shadow: 7.5px 15px 15px hsl(0deg 0% 0% / 0.27);
+    border-bottom-right-radius: 25px;">
+            </div>
+            <div class="doctor-details mt-20">
+                <h5 class="heading font-bold text-primary text-center">Profile</h5>
+                <h3 class="heading font-bold mb-10 text-center">{{doc.name}}</h3>
+                <h4 class="heading text-center">{{doc.expertise}}</h4>
+                <hr class="hr-1 ml-0" style="transform: translate(-50%, -50%); left: 50%;">
+                <p>{{doc.long_description|safe}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-80">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="heading-block">
+                <h3 class="heading font-bold text-lh-4">Meet Our Providers</h3>
+                <p class="sub-heading">There live the blind texts separated they right at the coast of the
+                    Semantics.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% for docs in Doctors %}
+        <div class="col-lg-3 col-md-6 mt-20">
+		<a href="/providers/{{docs.slug}}">
+            <div class="doctor-box-2">
+                <div class="doctor-img img-box">
+                    <img src="{% get_media_prefix %}{{docs.image}}" class="rounded-circle" alt="">
+                </div>
+                <div class="doctor-name">
+                    <h5 class="heading font-bold font-5">{{docs.name}}</h5>
+                    <span class="doctor-desig">{{docs.qualification}}</span>
+                </div>
+                {% comment %}<div class="doctor-details">
+                    <p class="mb-0 d-flex align-items-center justify-content-center">{{docs.expertise}}<i
+                            class="ion-call text-primary mr-10"></i> {{docs.phone_number}}</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i
+                            class="ion-mail text-primary mr-10"></i>{{docs.email}}</p>
+                </div>{% endcomment %}
+                <div class="text-center mt-30">
+                    <a href="/providers/{{docs.slug}}" class="btn btn-light">View Profile</a>
+                </div>
+            </div>
+			</a>
+        </div>
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom_admin.css' %}">
+    {% block extrahead %}{% endblock %}
+    {% block admin_head %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+.tox-notification{
+    display: none !important;
+}
+
+.sidenav-footer{
+	display: none;
+}
+
+.navbar-expand-lg{
+	display: none;
+}

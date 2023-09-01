@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+
+{% block content %}
+testimonials
+{% endblock %}

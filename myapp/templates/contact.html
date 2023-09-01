@@ -1,0 +1,227 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+
+{% block content %}
+{% comment %} <div class="container">
+  
+<div class="mb-3">
+  <form method="POST" action="{% url 'conatact' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_office_location">Office Location:</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="office_location" value="Main" id="id_office_location_main">
+        <label class="form-check-label" for="id_office_location_main">Main - 1040 SW 2nd Avenue, Ocala, FL</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="office_location" value="West" id="id_office_location_west">
+        <label class="form-check-label" for="id_office_location_west">West - 10230 SW 86th Circle, Ocala, FL</label>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="id_doctor">Doctor:</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="doctor" value="Ram Vasudevan, MD, FACC, FACP" id="id_doctor_1">
+        <label class="form-check-label" for="id_doctor_1">Ram Vasudevan, MD, FACC, FACP</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="doctor" value="Punwattie Ramnaraine, FNP-BC" id="id_doctor_2">
+        <label class="form-check-label" for="id_doctor_2">Punwattie Ramnaraine, FNP-BC</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="doctor" value="Alceha Mayne-Thomas, ARNP" id="id_doctor_3">
+        <label class="form-check-label" for="id_doctor_3">Alceha Mayne-Thomas, ARNP</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="doctor" value="Junaina Dominic, PA-C" id="id_doctor_4">
+        <label class="form-check-label" for="id_doctor_4">Junaina Dominic, PA-C</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="doctor" value="Emily Hawkins, APRN, NP-C" id="id_doctor_5">
+        <label class="form-check-label" for="id_doctor_5">Emily Hawkins, APRN, NP-C</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="id_full_name">Full Name:</label>
+      <input type="text" class="form-control" name="full_name" id="id_full_name">
+    </div>
+  
+    <div class="form-group">
+      <label for="id_email">Email:</label>
+      <input type="email" class="form-control" name="email" id="id_email">
+    </div>
+  
+    <div class="form-group">
+      <label for="id_phone_number">Phone Number:</label>
+      <input type="tel" class="form-control" name="phone_number" id="id_phone_number">
+    </div>
+  
+    <div class="form-group">
+      <label for="id_message">Message:</label>
+      <textarea class="form-control" name="message" id="id_message"></textarea>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  
+</div> {% endcomment %}
+<div class="container mt-80">
+  <div class="row">
+      <div class="col-lg-5 bg-light p-40">
+          <h3 class="heading font-bold mb-40">Get in Touch</h3>
+		    <div class="contact-icon">
+            <div class="con-icon">
+                <i class="ion-location-outline"></i>
+            </div>
+            <div class="con-body">
+                <h5 class="heading font-bold d-flex align-items-center mb-10">Ocala Downtown</h5>
+                <p class="mb-0 h6">Office Located in Downtown Ocala,<br> 1040 SW 2nd Avenue,<br> Ocala, FL 34471</p>
+            </div>
+        </div>
+          <hr>
+          <div class="contact-icon">
+              <div class="con-icon">
+                  <i class="ion-location-outline"></i>
+              </div>
+              <div class="con-body">
+                  <h5 class="heading font-bold d-flex align-items-center mb-10">Ocala West</h5>
+                  <p class="mb-0 h6">Office Located in West of Ocala,<br> 10230 SW 86th Circle,<br> Ocala, FL 34481</p>
+              </div>
+          </div>
+          <hr>
+          <div class="contact-icon">
+              <div class="con-icon">
+                  <i class="ion-call-outline"></i>
+              </div>
+              <div class="con-body">
+                  <h5 class="heading font-bold d-flex align-items-center mb-10">Helpline</h5>
+                  <p class="mb-0 h6">(352) 732-3005</p>
+                  <p class="mb-0 h6">(352) 861-6633</p>
+              </div>
+          </div>
+          <hr>
+          <div class="contact-icon">
+              <div class="con-icon">
+                  <i class="ion-mail-outline"></i>
+              </div>
+              <div class="con-body">
+                  <h5 class="heading font-bold d-flex align-items-center mb-10">Email</h5>
+                  <p class="mb-0 h6 link-break">contact@marionphysicianassociates.com</p>
+              </div>
+          </div>
+          <p class="mb-0 h6 mt-50 text-muted">For online appointment and hassle free consultation, <br> <a href="/book-appointment/">book your appointment now</a></p>
+      </div>
+      <div class="col-lg-7 p-40 border border-lg-left-0" style="background-image: url(images/world-map-1.png); background-repeat: no-repeat; background-position: 95% 4%">
+          <h3 class="heading font-bold mb-20">Write here, if you have any questions,
+            concerns, or comments regarding
+            Marion Physician Associates, P.A.</h3>
+          <p class="h6 mb-50 text-muted">Please DO NOT include your SSN # or Personal info.
+            or request for Refills or any thing related
+            with Medical Condition either you or others.
+            </p>
+          <form method="POST" action="{% url 'conatact' %}"  id="main-contact-form">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="id_office_location">Office Location:</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="office_location" value="Main" id="id_office_location_main">
+              <label class="form-check-label" for="id_office_location_main">Main - 1040 SW 2nd Avenue, Ocala, FL</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="office_location" value="West" id="id_office_location_west">
+              <label class="form-check-label" for="id_office_location_west">West - 10230 SW 86th Circle, Ocala, FL</label>
+            </div>
+          </div>
+        
+          <div class="form-group" style="display: grid;">
+            <label for="id_doctor">Doctor:</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="doctor" value="Ram Vasudevan, MD, FACC, FACP" id="id_doctor_1">
+              <label class="form-check-label" for="id_doctor_1">Ram Vasudevan, MD, FACC, FACP</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="doctor" value="Punwattie Ramnaraine, FNP-BC" id="id_doctor_2">
+              <label class="form-check-label" for="id_doctor_2">Punwattie Ramnaraine, FNP-BC</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="doctor" value="Alceha Mayne-Thomas, ARNP" id="id_doctor_3">
+              <label class="form-check-label" for="id_doctor_3">Alceha Mayne-Thomas, ARNP</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="doctor" value="Junaina Dominic, PA-C" id="id_doctor_4">
+              <label class="form-check-label" for="id_doctor_4">Junaina Dominic, PA-C</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="doctor" value="Emily Hawkins, APRN, NP-C" id="id_doctor_5">
+              <label class="form-check-label" for="id_doctor_5">Emily Hawkins, APRN, NP-C</label>
+            </div>
+          </div>
+              <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Full name" id="fname" name="full_name">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Email address" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Phone" id="phone_number" name="phone_number">
+            </div>
+              <div class="form-group">
+                  <textarea class="form-control" rows="5" placeholder="Please enter your message" id="message" name="message"></textarea>
+              </div>
+			  <br>
+			  <div class="g-recaptcha" data-sitekey="6LfbPMQmAAAAADrA6r2Wr_sCQ_cJbR20Tu9U_cB4"></div>
+			  
+              <p id="status"></p>
+              <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+          </form>
+      </div>
+  </div>
+</div>
+    <div class="pt-80 pb-80 bg-light mt-20"
+        style="background-image:url("{% static 'images/1920-650-2.jpg' %}"); background-size: cover; background-position: center center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="icon icon-4x icon-round icon-outline-primary">
+                        <i class="mw-care font-18"></i>
+                    </div>
+                    <h2 class="heading font-bold mt-20 mb-20">Call today to schedule your next appointment,</h2>
+                    <h3 class="heading font-bold mb-40 text-primary">or Visit either one of our two convenient
+                        locations.</h3>
+                    <a href="tel:+13527323005" class="btn btn-primary">
+                        Call Main Office</a>
+                    <a href="tel:+13528616633" class="btn btn-outline-primary ml-10">Call West Office</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	{% for message in messages %}
+<div class="modal zoom-in fade" id="modal-zoomin" data-open-onload="true" data-open-delay="0" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-image:url('images/850-478-2.jpg'); background-size:cover; background-position: center center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion-close-sharp"></i></button>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row">
+					  <div class="col-lg-12 text-center">
+                          {% comment %} <h5 class="heading font-bold text-{{message.tags}} mb-10">{{ message }}.</h5> {% endcomment %}
+                          <h5 class="font-12 text-{{message.tags}} mb-10">{{ message }}</h5>
+                          <p class="mb-30">We will get back you as soon as posible</p>
+                          <a href="" class="btn btn-primary" data-dismiss="modal">Close</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endfor %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}

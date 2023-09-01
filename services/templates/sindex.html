@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+{% block content %}
+<div class="container">
+<div class="row">
+<h2>At Marion Physician Associates, we provide the following services:</h2>
+                <ul class="list-styled mb-0">
+                    <li><i class="ion-checkmark-sharp list-icon text-success"></i>General primary care and family medicine, including complete physicals and specialty care for geriatric and women’s health issues</li>
+                    <li><i class="ion-checkmark-sharp list-icon text-success"></i>Critical care for those who are seriously ill or injured</li>   
+ <li><i class="ion-checkmark-sharp list-icon text-success"></i>Management of chronic conditions such as high blood pressure, diabetes, and arthritis</li> 
+ <li><i class="ion-checkmark-sharp list-icon text-success"></i>Diagnosis and treatment of lung and cardiac issues</li>
+<li><i class="ion-checkmark-sharp list-icon text-success"></i>Specialized podiatry care for feet and ankles</li> 
+				</ul>
+				<div class="row">
+				 <div class="col-lg-12 mt-20">
+				 <div class="row">
+{% for x in ser %}
+  <div class="col-lg-4 mt-20">
+    <div class="department-box-1 bg-light rounded">
+          <img src="{% get_media_prefix %}{{x.image}}" class="card-img" alt="...">
+        <h4 class="heading font-bold mt-10 mb-10">{{x.name}}</h4>
+        {% comment %} <p class="heading h6 font-semi-bold text-primary">Neuro Disorders</p> 
+        <p class="mb-20 text-lh-7 text-muted">Behind the word mountains, far from the countries Vokalia.</p>{% endcomment %}
+        <a href="{{x.slug}}" class="font-2 btn btn-primary text-light">Get details..</a>
+    </div>
+</div>
+ {% endfor %}
+ </div>
+ </div>
+<!-- <div class="col-lg-4 mt-20">
+ hello world
+ </div> -->
+ </div>
+ </div>
+</div>
+ 
+     <div class="pt-80 pb-80 bg-light mt-20"
+        style="background-image:url("{% static 'images/1920-650-2.jpg' %}"); background-size: cover; background-position: center center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="icon icon-4x icon-round icon-outline-primary">
+                        <i class="mw-care font-18"></i>
+                    </div>
+                    <h2 class="heading font-bold mt-20 mb-20">Call today to schedule your next appointment,</h2>
+                    <h3 class="heading font-bold mb-40 text-primary">or Visit either one of our two convenient
+                        locations.</h3>
+                    <a href="tel:+13527323005" class="btn btn-primary">
+                        Call Main Office</a>
+                    <a href="tel:+13528616633" class="btn btn-outline-primary ml-10">Call West Office</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

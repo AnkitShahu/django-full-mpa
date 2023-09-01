@@ -1,0 +1,403 @@
+{% extends 'base.html'%}
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+{% block content %}
+{% load static %}
+
+
+{% comment %} {% load post_tags %} {% endcomment %}
+{% comment %} <p>Title: {{ books.first.BannerTitle }}</p>
+{% for docs in doc %}
+    <p class="new">New: {{docs.name}}</p>
+{% endfor %} {% endcomment %}
+       <!-- Slider Revolution -->
+       <div class="rev_slider_wrapper fullwidthbanner-container">
+        <div id="slider-1" class="rev_slider" style="display:none;" data-version="5.0.7">
+            <ul>
+                <!-- Slide 1 -->
+                <li data-index="slider-layer1" data-transition="fade" data-slotamount="default" data-easein="default"
+                    data-easeout="default" data-masterspeed="default" data-saveperformance="off">
+
+                    <!-- Primary Image -->
+                    <img src="{% static 'images/banner/banner-1.webp' %}" data-lazyload="{% static 'images/banner/banner-1.webp' %}" alt="banner-1"
+                        data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                        class="rev-slidebg">
+
+                    <!-- Lead Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h3" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['-40','-10','-20','0']" data-fontsize="['46','32','30','24']"
+                        data-lineheight="['58','55','55','35']" data-color="['#1a1a1a']"
+                        data-width="['500','550','500','390']" data-height="220" data-whitespace="normal"
+                        data-frames='[{"delay":400,"speed":500,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power2.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 11; min-width: 600px; max-width: 600px; font-weight:800; white-space: normal; letter-spacing: -2px">
+                        Marion Physician Associates, P.A.</div>
+
+                    <!-- Paragraph Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h4 m-0" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['35','0','0','-10']" data-width="['500','500','500','390']"
+                        data-fontsize="['20', '18', '20', '16']" data-lineheight="['36','32','40','35']"
+                        data-height="100" data-whitespace="normal" data-transform_idle="o:1;"
+                        data-frames='[{"delay":400,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 10; white-space: normal;">Primary Care Practice & Cardiology located in Ocala,
+                        FL</div>
+
+                    <!-- Button -->
+                    <a href="/services" class="tp-caption btn btn-secondary btn-lg tp-resizeme"
+                        data-x="['left','left','left','left']" data-hoffset="['0','20','20','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['115','70','90','70']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                        data-frames='[{"delay":700,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        data-responsive="on" style="z-index: 12;">Read More </a>
+                </li>
+			{% comment %} 
+                <!-- Slide 2 -->
+                <li data-index="slider-layer2" data-transition="slideright" data-easein="default" data-easeout="default"
+                    data-masterspeed="default" data-saveperformance="off" data-title="A STUDY ON HAPPINESS"
+                    data-description="Nurturing the most awesome minds.">
+
+                    <!-- Primary Image -->
+                    <img src="{% static 'images/banner/banner-2.webp' %}" data-lazyload="{% static 'images/banner/banner-2.webp' %}"
+                        data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                        data-bgparallax="10" class="rev-slidebg" data-no-retina alt="banner-2">
+
+                    <!-- Lead Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h3" data-x="['right','right','right','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['-40','-10','-20','0']" data-fontsize="['46','32','30','24']"
+                        data-lineheight="['58','55','55','35']" data-color="['#1a1a1a']"
+                        data-width="['500','550','500','390']" data-height="220" data-whitespace="normal"
+                        data-frames='[{"delay":400,"speed":500,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power2.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 11; min-width: 600px; max-width: 600px; font-weight:800; white-space: normal; letter-spacing: -2px">
+                        Marion Heart Center</div>
+
+                    <!-- Paragraph Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h4 m-0"
+                        data-x="['right','right','right','left']" data-hoffset="['0','60','15','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['35','0','0','-10']"
+                        data-width="['500','500','500','390']" data-fontsize="['20', '18', '20', '16']"
+                        data-lineheight="['36','32','40','35']" data-height="100" data-whitespace="normal"
+                        data-transform_idle="o:1;"
+                        data-frames='[{"delay":400,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 10; white-space: normal;">Primary Care Practice & Cardiology located in Ocala,
+                        FL</div>
+
+                    <!-- Button -->
+                    <a href="department-detail-2.html" class="tp-caption btn btn-secondary btn-lg tp-resizeme"
+                        data-x="['right','right','right','left']" data-hoffset="['332','410','350','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['115','70','90','70']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                        data-frames='[{"delay":700,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        data-responsive="on" style="z-index: 12;">Read More </a>
+                </li>
+			{% endcomment %}
+				 <!-- slider 2 -->
+				                 <li data-index="slider-layer2" data-transition="fade" data-slotamount="default" data-easein="default"
+                    data-easeout="default" data-masterspeed="default" data-saveperformance="off">
+
+                    <!-- Primary Image -->
+                    <img src="{% static 'images/banner/banner-4.webp' %}" data-lazyload="{% static 'images/banner/banner-4.webp' %}" alt=""
+                        data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                        class="rev-slidebg">
+
+                    <!-- Lead Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h3" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['-40','-10','-20','0']" data-fontsize="['46','32','30','24']"
+                        data-lineheight="['58','55','55','35']" data-color="['#1a1a1a']"
+                        data-width="['500','550','500','390']" data-height="220" data-whitespace="normal"
+                        data-frames='[{"delay":400,"speed":500,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power2.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 11; min-width: 600px; max-width: 600px; font-weight:800; white-space: normal; letter-spacing: -2px">
+                        Marion Physician Associates, P.A.</div>
+
+                    <!-- Paragraph Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h4 m-0" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['35','0','0','-10']" data-width="['500','500','500','390']"
+                        data-fontsize="['20', '18', '20', '16']" data-lineheight="['36','32','40','35']"
+                        data-height="100" data-whitespace="normal" data-transform_idle="o:1;"
+                        data-frames='[{"delay":400,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 10; white-space: normal;">Primary Care Practice & Cardiology located in Ocala,
+                        FL</div>
+
+                    <!-- Button -->
+                    <a href="department-detail-1.html" class="tp-caption btn btn-secondary btn-lg tp-resizeme"
+                        data-x="['left','left','left','left']" data-hoffset="['0','20','20','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['115','70','90','70']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                        data-frames='[{"delay":700,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        data-responsive="on" style="z-index: 12;">Read More </a>
+                </li>
+                <!-- slider 3 -->
+                <li data-index="slider-layer3" data-transition="fade" data-slotamount="default" data-easein="default"
+                    data-easeout="default" data-masterspeed="default" data-saveperformance="off">
+
+                    <!-- Primary Image -->
+                    <img src="{% static 'images/banner/banner-3.webp' %}" data-lazyload="{% static 'images/banner/banner-3.webp' %}" alt=""
+                        data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                        class="rev-slidebg">
+
+                    <!-- Lead Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h3" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['-40','-10','-20','0']" data-fontsize="['46','32','30','24']"
+                        data-lineheight="['58','55','55','35']" data-color="['#1a1a1a']"
+                        data-width="['500','550','500','390']" data-height="220" data-whitespace="normal"
+                        data-frames='[{"delay":400,"speed":500,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power2.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 11; min-width: 600px; max-width: 600px; font-weight:800; white-space: normal; letter-spacing: -2px">
+                        Marion Physician Associates, P.A.</div>
+
+                    <!-- Paragraph Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h4 m-0" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['35','0','0','-10']" data-width="['500','500','500','390']"
+                        data-fontsize="['20', '18', '20', '16']" data-lineheight="['36','32','40','35']"
+                        data-height="100" data-whitespace="normal" data-transform_idle="o:1;"
+                        data-frames='[{"delay":400,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 10; white-space: normal;">Primary Care Practice & Cardiology located in Ocala,
+                        FL</div>
+
+                    <!-- Button -->
+                    <a href="department-detail-1.html" class="tp-caption btn btn-secondary btn-lg tp-resizeme"
+                        data-x="['left','left','left','left']" data-hoffset="['0','20','20','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['115','70','90','70']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                        data-frames='[{"delay":700,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        data-responsive="on" style="z-index: 12;">Read More </a>
+                </li>
+				 <!-- slider 4 -->
+				                 <li data-index="slider-layer4" data-transition="fade" data-slotamount="default" data-easein="default"
+                    data-easeout="default" data-masterspeed="default" data-saveperformance="off">
+
+                    <!-- Primary Image -->
+                    <img src="{% static 'images/banner/banner-2.webp' %}" data-lazyload="{% static 'images/banner/banner-2.webp' %}" alt=""
+                        data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                        class="rev-slidebg">
+
+                    <!-- Lead Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h3" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['-40','-10','-20','0']" data-fontsize="['46','32','30','24']"
+                        data-lineheight="['58','55','55','35']" data-color="['#1a1a1a']"
+                        data-width="['500','550','500','390']" data-height="220" data-whitespace="normal"
+                        data-frames='[{"delay":400,"speed":500,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power2.out"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 11; min-width: 600px; max-width: 600px; font-weight:800; white-space: normal; letter-spacing: -2px">
+                        Marion Physician Associates, P.A.</div>
+
+                    <!-- Paragraph Text -->
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 h4 m-0" data-x="['left','left','left','left']"
+                        data-hoffset="['0','20','20','10']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['35','0','0','-10']" data-width="['500','500','500','390']"
+                        data-fontsize="['20', '18', '20', '16']" data-lineheight="['36','32','40','35']"
+                        data-height="100" data-whitespace="normal" data-transform_idle="o:1;"
+                        data-frames='[{"delay":400,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 10; white-space: normal;">Primary Care Practice & Cardiology located in Ocala,
+                        FL</div>
+
+                    <!-- Button -->
+                    <a href="department-detail-1.html" class="tp-caption btn btn-secondary btn-lg tp-resizeme"
+                        data-x="['left','left','left','left']" data-hoffset="['0','20','20','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['115','70','90','70']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                        data-frames='[{"delay":700,"speed":700,"frame":"0","from":"y:bottom;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"power3.inOut"}]'
+                        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        data-responsive="on" style="z-index: 12;">Read More </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% comment %} {% for book in books %} {% endcomment %}
+    {% comment %} <p>Title: {{ books|index:0.title }}</p> {% endcomment %}
+    {% comment %} <p>Author: {{ books|index:0.author }}</p>
+     {% endcomment %}
+{% comment %} {% endfor %} {% endcomment %}
+    <div class="pt-60 pb-80 mt-30 bg-grey-1"
+        style="background-image: url("{% static 'images/world-map-3.png' %}"); background-repeat: no-repeat; background-position: right center; background-size: 50%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mt-20">
+                    <h3 class="heading font-bold text-lh-4 mb-0">Get in touch with our experts today!</h3>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center mt-20">
+                    <i class="ion-call-outline icon icon-primary icon-round icon-3x mr-20"></i>
+                    <div>
+                        <h6 class="heading font-bold mb-10 text-primary">Call Us</h6>
+                        <p class="mb-0 h4 font-semi-bold text-lh-1">+13527323005</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center mt-20">
+                    <i class="ion-mail-outline icon icon-primary icon-round icon-3x mr-20"></i>
+                    <div>
+                        <h6 class="heading font-bold mb-10 text-primary">Book Now</h6>
+                        <p class="mb-0 h4 font-semi-bold text-lh-1"><a
+                                href="https://marionphysicianassociates.com/book/mhc-book-appointment/mhc-book-appointment.html">Click
+                                Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-60" style= 'background: #eff5f9; padding: 20px;'>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 mt-20">
+                <img src="{% static 'images/home-ab.webp' %}" class="img-fluid" alt="doctors">
+            </div>
+            <div class="col-lg-8 mt-20 pl-lg-30">
+                <h3 class="heading font-bold text-lh-5">About Marion Physician Associates</h3>
+                <p>Marion Physician Associates, P.A. is a multispecialty practice that provides integrative preventive
+                    care and chronic care management services. The practice boasts two state-of-the-art clinics in
+                    Downtown Ocala and Ocala West, Florida.</p>
+                <p>With the belief that every patient’s needs must be met with attention, respect, and compassion, the
+                    team at Marion Physician Associates always puts the patient first. Following this mission has served
+                    as a foundation for the practice’s growth and success.</p>
+                <p>Doctors at Marion Physician Associates provide patients with personalized care and give them the most
+                    information during visits, so patients can work directly with their doctors to make the right
+                    decision for their health. The team regularly provides cardiac intervention, diabetes management,
+                    hypertension treatment, vein disease treatment, and so much more.</p>
+                <p>Marion Physician Associates providers speak English, Spanish, Hindi, and Tamil, so patients from
+                    diverse cultural backgrounds can receive the care they need, without struggling with language
+                    barriers. The team makes every possible effort to schedule patients as soon as possible, so patients
+                    can get started on treatment quickly.</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-grey-9 pt-30 pb-30 mt-30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center text-lg-left mt-10 mb-10">
+                    <h1 class="heading font-style-3 font-italic text-white mb-2 d-flex justify-content-center"> OUR MISSION</h1>
+                    <p class="heading font-style-3 font-italic text-white font-6 mb-0"><span class="text-primary font-8 font-bold">At Marion Physician Associates, P.A., </span>we believe that every patient’s needs must be met with attention, respect, and compassion.
+                        We always put the patient first, it’s the foundation of our practice and what has allowed us to be so successful.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-80 pb-80 bg-light mt-20"
+        style="background-image:url("{% static 'images/1920-650-2.jpg' %}"); background-size: cover; background-position: center center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="icon icon-4x icon-round icon-outline-primary">
+                        <i class="mw-care font-18"></i>
+                    </div>
+                    <h2 class="heading font-bold mt-20 mb-20">Call today to schedule your next appointment,</h2>
+                    <h3 class="heading font-bold mb-40 text-primary">or Visit either one of our two convenient
+                        locations.</h3>
+                    <a href="tel:+13527323005" class="btn btn-primary">
+                        Call Main Office</a>
+                    <a href="tel:+13528616633" class="btn btn-outline-primary mt-2 ml-lg-10">Call West Office</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class="container mt-80">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h3 class="heading font-bold text-lh-4 text-secondary text-center">Orthopaedics Department</h3>
+                <h5 class="text-center text-lh-9 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum.</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 mt-20">
+                <h5 class="heading font-bold">Overview</h5>
+                <p class="text-justify mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-lg-6 mt-20">
+                <h5 class="heading font-bold">Treatments</h5>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-styled mb-0">
+                            <li><i class="ion-chevron-forward-outline list-icon"></i> <a href=""
+                                    class="link-primary">Arthritis</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Osteoarthritis</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Elbow Pain</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Fractures</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href="" class="link-primary">Hip
+                                    Fractures</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="list-styled mb-0">
+                            <li><i class="ion-chevron-forward-outline list-icon"></i> <a href=""
+                                    class="link-primary">Lower Back Pain</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Elbow Pain</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Osteoarthritis</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href=""
+                                    class="link-primary">Knee Pain</a></li>
+                            <li><i class="ion-chevron-forward-outline list-icon"></i><a href="" class="link-primary">Hip
+                                    Fractures</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <div class="container mt-80">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="heading-block">
+                    <h3 class="heading font-bold text-lh-4">Meet Our Providers</h3>
+                    <p class="sub-heading">There live the blind texts separated they right at the coast of the
+                        Semantics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for docs in doc %}
+            <div class="col-lg-3 col-md-6 mt-20">
+				<a href="/providers/{{docs.slug}}">
+                <div class="doctor-box-2">
+                    <div class="doctor-img img-box">
+                        <img src="{% get_media_prefix %}{{docs.image}}" class="rounded-circle" alt="">
+                    </div>
+                    <div class="doctor-name">
+                        <h5 class="heading font-bold font-5">{{docs.name}}</h5>
+                        <span class="doctor-desig">{{docs.qualification}}</span>
+                    </div>
+                    <div class="doctor-details">
+                       {% comment %} <p class="mb-0 d-flex align-items-center justify-content-center"><i
+                                class="ion-call text-primary mr-10"></i> {{docs.phone_number}}</p>
+                        <p class="mb-0 d-flex align-items-center justify-content-center"><i
+                                class="ion-mail text-primary mr-10"></i>{{docs.email}}</p>{% endcomment %}
+                    </div>
+                    <div class="text-center mt-30">
+                        <a href="/providers/{{docs.slug}}" class="btn btn-light">View Profile</a>
+                    </div>
+                </div>
+				</a>
+            </div>
+            {% endfor %}
+ 
+{% endblock %}

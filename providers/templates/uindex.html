@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+{% block content %}
+
+</body>
+<div class="bg-light pt-60 pb-80">
+    {% for doctor in Doctors %}
+    <div class="container mt-20">
+        <div class="row align-items-center">
+            <div class="col-lg-3 mt-20">
+                <div class="doctor-img">    
+                    <img src="{% get_media_prefix %}{{doctor.image}}" class="img-fluid rounded-circle img-thumbnail" alt="">
+                </div>
+            </div>
+            <div class="col-lg-5 mt-20">
+                <div class="doctor-details">
+                    <h3 class="heading font-bold mb-10">{{doctor.name}}</h3>
+                    <h5 class="heading">{{doctor.expertise}}</h5>
+                    <p class="mb-20">
+                        <span class="badge bg-white border">{{doctor.qualification}}</span>&nbsp;
+                    </p>
+                    <p class="h6 mb-0">{{doctor.short_description}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-20">
+                <p class="h6 d-flex align-items-center opacity-08 mb-0"><i class="ion-mail-outline icon-left text-primary"></i>{{doctor.email}}</p>
+                <p class="h6 d-flex align-items-center opacity-08 mb-30"><i class="ion-call-outline icon-left text-primary"></i>{{doctor.phone_number}}</p>
+                <a href="{{doctor.slug}}" class="btn btn-primary curved">More...<i class="ion-arrow-forward-sharp icon-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <hr >
+    {% endfor %}
+</div>
+
+{% endblock %}

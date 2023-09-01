@@ -1,0 +1,269 @@
+{% extends 'base.html'%}
+{% block meta_title %}{{post.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{post.meta_description}}{% endblock meta_description %}
+
+{% block meta_index %}{{post.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{post.follow}}{% endblock meta_follow %}
+{% block content %}
+{% load static %}
+
+
+
+<div class="page-header" style="background-image: url(https://care4patients.com/myapp/static/images/doctor-banner.jpg);">           <!-- Page Header -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="heading bold">{{ post.title }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li class="active">Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-80 mb-80">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="blog-box">
+                <div class="blog-header">
+                    <img src="images/doctor-banner.jpg" class="img-fluid rounded" alt="">
+                    <h2 class="heading font-bold post-title">{{ post.title }}</h2>
+                    <div class="blog-meta">
+                        <ul class="meta-list">
+                            <li class="posted-on">Posted On : 
+                                <a href="">
+                                    <span class="date">{{ post.publish }}</span>
+                                </a>
+                            </li>
+                            <li class="posted-by">By : {{ post.author }}</li>
+                        </ul>
+                    </div>                            
+                </div>
+                <div class="blog-excerpt">
+                   {{ post.body|safe  }}
+                </div>
+            </div>
+
+            {% comment %} <div class="blog-author">
+                <div class="author-media">
+                    <img src="images/150-150-1.jpg" class="author-img" alt="">
+                    <ul class="social social-2x justify-content-center">
+                        <li><a class="facebook" href=""><i class="ion-logo-facebook"></i></a></li>
+                        <li><a class="twitter" href=""><i class="ion-logo-twitter"></i></a></li>
+                        <li><a class="skype" href=""><i class="ion-logo-skype"></i></a></li>
+                    </ul>
+                </div>
+                <div class="author-meta">
+                    <h4 class="heading font-bold mb-0">Jeff Rockford</h4>
+                    <p class="text-muted mb-10">Senior Gynaecologist</p>
+                    <a href="" class="d-block mb-10">http://www.doctorjeff.com</a>
+                    <p class="mb-0">The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia and made herself on the way.</p>
+                </div>
+            </div> {% endcomment %}
+
+            {% comment %} <div class="blog-comments">
+                <h4 class="heading font-bold">4 Comments</h4>
+                <ul class="comment-list">
+                    <li class="comment">
+                        <div class="comment-media">
+                            <img src="images/120-120-1.jpg" class="comment-img" alt="">
+                        </div>
+                        <div class="comment-body">
+                            <div class="who-said">Christina said : <span class="comment-date">2 days ago</span></div>
+                            <div class="what-said">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                            <a href="#" class="comment-reply">Reply</a>
+                        </div>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="comment-media">
+                                    <img src="images/120-120-2.jpg" class="comment-img" alt="">
+                                </div>
+                                <div class="comment-body">
+                                    <div class="who-said">Everett said : <span class="comment-date">2 hours ago</span></div>
+                                    <div class="what-said">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                                    <a href="#" class="comment-reply">Reply</a>
+                                </div>
+                                <ul class="comment-list">
+                                    <li class="comment">
+                                        <div class="comment-media">
+                                            <img src="images/120-120-1.jpg" class="comment-img" alt="">
+                                        </div>
+                                        <div class="comment-body">
+                                            <div class="who-said">Everett said : <span class="comment-date">1 hour ago</span></div>
+                                            <div class="what-said">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                                            <a href="#" class="comment-reply">Reply</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="comment">
+                        <div class="comment-media">
+                            <img src="images/120-120-3.jpg" class="comment-img" alt="">
+                        </div>
+                        <div class="comment-body">
+                            <div class="who-said">Everett said : <span class="comment-date">8 February</span></div>
+                            <div class="what-said">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                            <a href="#" class="comment-reply">Reply</a>
+                        </div>
+                    </li>
+                </ul>
+            </div> {% endcomment %}
+
+            <div class="write-comment">
+                <h4 class="heading font-bold mb-10">Share your views</h4>
+                <p class="mb-30">We respect the views of our readers, please be polite while commenting.</p>
+                <form>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="comment-name" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="comment-email" placeholder="Email address">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="form-control" id="comment-text" rows="5" placeholder="Write your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary"><i class="ion-pencil-sharp icon-left"></i> Post Comment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-40 mt-lg-0">
+            <aside class="sidebar pl-lg-20">
+                <div class="widget widget-search pt-0">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-mail-open-outline icon-left"></i>Subscribe to Blog</h5>
+                    <p class="">Your daily dose of health tips, news updates and good habits.</p>
+                    <form class="search">   <!-- Search Form -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email Id">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button">Go</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="widget widget-categories">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-list-outline icon-left"></i>Categories</h5>
+                    <ul class="widget-list">
+                        <li><a href="blog-list.html">Personality Development <span class="badge badge-light">56</span></a></li>
+                        <li><a href="blog-list.html">Techonology <span class="badge badge-light">9</span></a></li>
+                        <li><a href="blog-list.html">Life Teachings <span class="badge badge-light">23</span></a></li>
+                        <li><a href="blog-list.html">Stress Management <span class="badge badge-light">21</span></a></li>
+                        <li><a href="blog-list.html">Career <span class="badge badge-light">45</span></a></li>
+                        <li><a href="blog-list.html">Techonology <span class="badge badge-light">2</span></a></li>
+                        <li><a href="blog-list.html">Life Teachings <span class="badge badge-light">65</span></a></li>
+                    </ul>
+                </div>
+                <div class="widget widget-tags">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-pricetag-outline icon-left"></i>Trending Tags</h5>
+                    <ul class="widget-list">
+                        <li><a href="blog-list.html">Healthcare</a></li>
+                        <li><a href="blog-list.html">Hair</a></li>
+                        <li><a href="blog-list.html">Human Body</a></li>
+                        <li><a href="blog-list.html">Psychotherapy</a></li>
+                        <li><a href="blog-list.html">Stress Management</a></li>
+                        <li><a href="blog-list.html">Diet Chart</a></li>
+                        <li><a href="blog-list.html">Water Borne Disease</a></li>
+                        <li><a href="blog-list.html">Healthcare</a></li>
+                        <li><a href="blog-list.html">Hair</a></li>
+                        <li><a href="blog-list.html">Human Body</a></li>
+                        <li><a href="blog-list.html">Psychotherapy</a></li>
+                        <li><a href="blog-list.html">Stress Management</a></li>
+                    </ul>
+                </div>
+                <div class="widget widget-blogs">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-document-text-outline icon-left"></i>Recent Blog</h5>
+                    <ul class="widget-list">
+                        <li>
+                            <a href="blog-single.html">10 Diet Charts to help you lose weight without any workout</a>
+                        </li>
+                        <li>
+                            <a href="blog-single.html">The benefits and drawbacks of getting your knee replaced</a>
+                        </li>
+                        <li>
+                            <a href="blog-single.html">Heat during straightening makes hair weak from roots</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="widget widget-social">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-share-social-outline icon-left"></i>We're Social</h5>
+                    <p class="mb-20">Care for your loved ones by sharing our blogs with your friends & family</p>
+                    <ul class="social social-2x">
+                        <li><a class="facebook" href=""><i class="ion-logo-facebook"></i></a></li>
+                        <li><a class="twitter" href=""><i class="ion-logo-twitter"></i></a></li>
+                        <li><a class="skype" href=""><i class="ion-logo-skype"></i></a></li>
+                        <li><a class="pinterest" href=""><i class="ion-logo-pinterest"></i></a></li>
+                        <li><a class="instagram" href=""><i class="ion-logo-instagram"></i></a></li>
+                        <li><a class="youtube" href=""><i class="ion-logo-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="widget widget-testimonial">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-chatbox-outline icon-left"></i>People Say</h5>
+                    <div class="flexible-slider" data-items="1" data-arrows="false" data-dots="false">
+                        <div class="slider-items">
+                            <div class="item">
+                                <div class="testi-text">
+                                    Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                                </div>
+                                <div class="testi-footer">
+                                    <img src="images/250-250-4.jpg" class="testi-img" alt="">
+                                    <h6 class="said-by">Christina Jones</h6>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testi-text">
+                                    Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                                </div>
+                                <div class="testi-footer">
+                                    <img src="images/250-250-5.jpg" class="testi-img" alt="">
+                                    <h6 class="said-by">Christina Jones</h6>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testi-text">
+                                    Behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                                </div>
+                                <div class="testi-footer">
+                                    <img src="images/250-250-3.jpg" class="testi-img" alt="">
+                                    <h6 class="said-by">Christina Jones</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget-categories">
+                    <h5 class="heading d-flex align-items-center"><i class="ion-time-outline icon-left"></i>Archives</h5>
+                    <ul class="widget-list">
+                        <li><a href="blog-list.html">January 2021 <span class="badge badge-light">08</span></a></li>
+                        <li><a href="blog-list.html">Februrary 2021 <span class="badge badge-light">24</span></a></li>
+                        <li><a href="blog-list.html">March 2021 <span class="badge badge-light">02</span></a></li>
+                        <li><a href="blog-list.html">April 2021 <span class="badge badge-light">34</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

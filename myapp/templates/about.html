@@ -1,0 +1,137 @@
+{% extends 'base.html'%}
+{% block meta_title %}{{seo_detail.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{seo_detail.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{seo_detail.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{seo_detail.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{seo_detail.follow}}{% endblock meta_follow %}
+{% load static %}
+{% block content %}
+
+
+<div class="container mt-60" style="background: #eff5f9; padding: 20px;">
+    <div class="row align-items-center">
+		<div class="col-lg-4 mt-20">
+            <img src="{% static 'images/home-ab.webp' %}" class="img-fluid" alt="doctors">
+        </div>
+        <div class="col-md-8 mt-20 pr-lg-30" style=" font-size: 1.1rem; font-family: 'Manrope';">
+            <h3 class="heading font-bold text-lh-6">About Marion Physician Associates</h3>
+            <hr class="hr-1 ml-0">
+            <p class="mb-2">Marion Physician Associates, P.A. is a multispecialty practice that provides integrative preventive care and chronic care management services. The practice boasts two state-of-the-art clinics in Downtown Ocala and Ocala West, Florida.</p>
+            <p class="mb-2 ">With the belief that every patient’s needs must be met with attention, respect, and compassion, the team at Marion Physician Associates always puts the patient first. Following this mission has served as a foundation for the practice’s growth and success.
+            </p>
+            <p class="mb-2 ">The team of highly trained doctors, nurse practitioners, and medical professionals uses up-to-date technology to provide patients with fast and reliable care and a thorough diagnosis. With on-site diagnostic testing and a full-service lab that provides a quick turnaround time, patients can get all of their diagnostic needs met under one roof.</p>
+            <p class="mb-2 ">Doctors at Marion Physician Associates provide patients with personalized care and give them the most information during visits, so patients can work directly with their doctors to make the right decision for their health. The team regularly provides cardiac intervention, diabetes management, hypertension treatment, vein disease treatment, and so much more.</p>
+            <p class="mb-2 ">
+                Marion Physician Associates providers speak English, Spanish, Hindi, and Tamil, so patients from diverse cultural backgrounds can receive the care they need, without struggling with language barriers. The team makes every possible effort to schedule patients as soon as possible, so patients can get started on treatment quickly.</p>
+        </div>
+        {% comment %} <div class="col-lg-4 mt-20">
+            <div class="p-40 bg-grey-1">
+                <p class="h6 d-flex align-items-center font-semi-bold mb-20"><i class="ion-people-outline icon icon-primary icon-round mr-20"></i>Experienced Staff</p>
+                <p class="h6 d-flex align-items-center font-semi-bold mb-20"><i class="ion-fitness-outline icon icon-primary icon-round mr-20"></i>Advanced machines</p>
+                <p class="h6 d-flex align-items-center font-semi-bold mb-20"><i class="ion-ribbon-outline icon icon-primary icon-round mr-20"></i>65 years of trust</p>
+                <p class="h6 d-flex align-items-center font-semi-bold mb-0"><i class="ion-laptop-outline icon icon-primary icon-round mr-20"></i>Online appointments</p>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</div>
+<div class="container mt-80">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="heading-block">
+                <h3 class="heading font-bold text-lh-4">Meet Our Providers</h3>
+                <!-- <p class="sub-heading">There live the blind texts separated they right at the coast of the Semantics.</p> -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+	{% for x in doc %}
+        <div class="col-lg-3 col-md-6 mt-20">
+		  <a href="/providers/{{x.slug}}" >
+            <div class="doctor-box-2">
+                <div class="doctor-img img-box">    
+                    <img src="{% get_media_prefix %}{{x.image}}" class="rounded-circle ar1" alt="">
+                </div>
+                <div class="doctor-name">
+                    <h5 class="heading font-bold font-5">{{x.name}}</h5>
+                    <span class="doctor-desig">{{x.qualification}}</span>
+                    
+                </div>
+                <div class="doctor-details">
+                    <a class="btn btn-outline-info btn-sm btn-block" href="/providers/{{x.slug}}">{{x.expertise}}<i class="ion-information-circle-outline icon-right"></i></a>
+               {% comment %}     <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-call text-primary mr-10"></i>{{x.phone_number}}</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-mail text-primary mr-10"></i>{{x.email}}</p> {% endcomment %}
+                </div>
+            </div>
+			</a>
+        </div>
+	{% endfor %}
+	<!--
+        <div class="col-lg-3 col-md-6 mt-20">
+            <div class="doctor-box-2">
+                <div class="doctor-img">    
+                    <img src="{% static 'images/mhc-provider-ramnaraine-460x365.webp' %}" class="rounded-circle ar1" alt="">
+                </div>
+                <div class="doctor-name">
+                    <h5 class="heading font-bold font-5">Punwattie Ramnaraine</h5>
+                    <span class="doctor-desig">FNP-BC</span>
+                   
+                </div>
+                <div class="doctor-details">
+                     <a class="btn btn-outline-info btn-sm btn-block" href="#">Primary Care<i class="ion-information-circle-outline icon-right"></i></a>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-call text-primary mr-10"></i> 0093-513-244</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-mail text-primary mr-10"></i> roberto@medwise.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-20">
+            <div class="doctor-box-2">
+                <div class="doctor-img">    
+                    <img src="{% static 'images/mhc-provider-mayne.thomas-460x365.webp' %}" class="rounded-circle ar1" alt="" >
+                </div>
+                <div class="doctor-name"> 
+                    <h5 class="heading font-bold font-5">Alceha Mayne-Thomas</h5>
+                    <span class="doctor-desig">ARNP</span>
+                    
+                </div>
+                <div class="doctor-details">
+                        <a class="btn btn-outline-info btn-block" href="#">Family Medicine<i class="ion-information-circle-outline icon-right"></i></a>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-call text-primary mr-10"></i> 0093-513-244</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-mail text-primary mr-10"></i> merri@medwise.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-20">
+            <div class="doctor-box-2">
+                <div class="doctor-img">    
+                    <img src="{% static 'images/mhc-provider-junaina.dominic-460x365.webp' %}" class="rounded-circle ar1" alt="provider-junaina.dominic">
+                </div>
+                <div class="doctor-name">
+                    <h5 class="heading font-bold font-5">Junaina Dominic</h5>
+                    <span class="doctor-desig">PA-C</span>
+                </div>
+                <div class="doctor-details">
+                    <a class="btn btn-outline-info btn-sm btn-block" href="#">Certified Physician Assistant<i class="ion-information-circle-outline icon-right"></i></a>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-call text-primary mr-10"></i> 0093-513-244</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-mail text-primary mr-10"></i> merri@medwise.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-20">
+            <div class="doctor-box-2">
+                <div class="doctor-img">    
+                    <img src="{% static 'images/mhc-provider-emily.hawkins-460x365.webp' %}" class="rounded-circle ar1" alt="">
+                </div>
+                <div class="doctor-name">
+                    <h5 class="heading font-bold font-5">Emily Hawkins</h5>
+                    <span class="doctor-desig">APRN, NP-C</span>
+                </div>
+                <div class="doctor-details">
+                    <a class="btn btn-outline-info btn-sm btn-block" href="#">Nurse Practitioner<i class="ion-information-circle-outline icon-right"></i></a>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-call text-primary mr-10"></i> 0093-513-244</p>
+                    <p class="mb-0 d-flex align-items-center justify-content-center"><i class="ion-mail text-primary mr-10"></i> merri@medwise.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}

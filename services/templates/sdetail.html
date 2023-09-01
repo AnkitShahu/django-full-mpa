@@ -1,0 +1,152 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block meta_title %}{{ser.meta_title}}{% endblock meta_title %} 
+{% block meta_description %}{{ser.meta_description}}{% endblock meta_description %} 
+{% block canonical_url %}{{ser.canonical_url}}{% endblock canonical_url %}
+{% block meta_index %}{{ser.robots}}{% endblock meta_index %}
+{% block meta_follow %}{{ser.follow}}{% endblock meta_follow %}
+{% block content %}
+{% comment %} 
+<div class = "container">
+<div class="card">
+  <img src="{% get_media_prefix %}{{ser.image}}" class="img-fluid img-thumbnail" alt="{{ser.alt_tag}}">
+  <div class="card-body">
+    <h5 class="card-title">{{https://care4patients.com/services/.name}}</h5>
+    <p class="card-text">{{ser.description}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endcomment %} 
+
+<style>
+.services-section li{
+	list-style: none;
+    margin: 20px 0 0 0;
+}
+
+</style>
+
+<div class="page-header" style="background-image: url({% static 'images/banner-img.jpg' %})">           <!-- Page Header -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="heading bold">{{ser.name}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-wrapper" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+						 <li><a href="{% url 'services' %}">Services</a></li>
+                        <li class="active">{{ser.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="container mt-80">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="heading-block">
+                {% comment %} <h3 class="heading font-bold text-lh-4">{{ser.name}}</h3> {% endcomment %}
+                <p class="sub-heading" style="max-width: 700px;">Marion Physician Associates,
+                    Primary Care Practice & Cardiology
+                    located in Ocala, FL</p>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="container mt-60">
+    <div class="row align-items-center">
+        <div class="col-lg-5 mt-20">
+            <img src="{% get_media_prefix %}{{ser.image}}" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-lg-7 pl-lg-30 mt-20">
+            <h3 class="heading font-bold mb-10">{{ser.name}}</h3>
+            <p class="">{{ser.description}}</p>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container mt-60">
+<div class="row">
+<h2 class="mx-auto">{{ser.name}} Q & A</h2>
+    <div class="col-lg-12 mt-20">
+        <div id="a3" class="accordion-3" role="tablist">
+            {% for faq in faqs %}
+            <div class="accordion-item">
+                <div class="accordion-heading" role="tab" id="a3heading{{faq.id}}">
+                    <h6 class="accordion-title font-bold">
+                        <a class="collapsed" role="button" data-toggle="collapse" href="#a3body{{faq.id}}" aria-expanded="true" aria-controls="a3body1">
+                            {{faq.question}}
+                        </a>
+                    </h6>
+                </div>
+                <div id="a3body{{faq.id}}" data-parent="#a3" class="accordion-body collapse" role="tabpanel" aria-labelledby="a3heading{{faq.id}}">
+                    <div class="accordion-data">
+                        {{faq.answer}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-lg-4" style="display: flex; 
+     align-items: center; 
+     justify-content: center;">
+<div style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0px 50px 50px; */
+    /* border: 2px solid; */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f4f4f4;">
+	<div style="    background-color: #427cc5;
+    display: flex;
+    /* position: absolute; */
+    width: 100%;
+    padding: 15px 100px;
+"><h4 class="mx-auto heading font-bold mb-10 text-white">Services</h4></div>
+	<div class="mx-auto" ><ul class="services-section">
+{% for x in allser %}		
+<li><a href="/services/{{x.slug}}">{{x.name}}</a></li>
+{% endfor %}
+	</ul></div>
+
+
+</div>
+</div>
+</div>
+</div>
+    <div class="pt-80 pb-80 bg-light mt-20"
+        style="background-image:url("{% static 'images/1920-650-2.jpg' %}"); background-size: cover; background-position: center center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="icon icon-4x icon-round icon-outline-primary">
+                        <i class="mw-care font-18"></i>
+                    </div>
+                    <h2 class="heading font-bold mt-20 mb-20">Call today to schedule your next appointment,</h2>
+                    <h3 class="heading font-bold mb-40 text-primary">or Visit either one of our two convenient
+                        locations.</h3>
+                    <a href="tel:+13527323005" class="btn btn-primary">
+                        Call Main Office</a>
+                    <a href="tel:+13528616633" class="btn btn-outline-primary ml-10">Call West Office</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

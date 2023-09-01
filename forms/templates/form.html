@@ -1,0 +1,86 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+  
+<div class="container mx-auto">
+	  {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>{{ message }}.</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+      </div>
+      {% endfor %}
+    <h1>Book Appointment</h1>
+    <form id="myForm" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_div }}
+
+
+         {% comment %} 
+            <div class="fb-sigpad fb-item-alignment-center" id="fb-sigpad_control" style="display: block; cursor: default;">
+            <div class="fb-grouplabel sigpad_label_container"><label class="sigPad_label" style="display: inline;">Please sign / Initial below</label></div>
+            <script src="https://www.marionphysicianassociates.com/book/mhc-book-appointment/common/libs_js/flashcanvas.js"></script>												
+            <div class="sig sigWrapper current"><canvas class="pad" height="100" style="max-width:200px;height:100px" width="200"></canvas>													<input type="hidden" name="sigpad-output" class="sigpad-output" value="">													<input type="hidden" name="sigpad-width" class="sigpad-width" value="200">													<input type="hidden" name="sigpad-height" class="sigpad-height" value="100">													<input type="hidden" name="sigpad-prefix" class="sigpad-prefix" value="sigpad">												</div><div class="fb-grouplabel sigpad_clear_container"><label class="sigPad_clear">Clear</label></div>
+            </div>  
+         {% endcomment %}
+            <style> 
+            #canvas {
+                border: 1px solid black; }
+            </style>
+
+        <p><input type="checkbox" name="true" value="Bike" required class="mr-2">I have read and agreed to the Privacy Policy and Terms of use. And that I am at least 13 years or age and have authority to make this appointment.</p>
+        <p><input type="checkbox" name="true" value="Bike" required class="mr-2">I agree to receiving text messages for feedback requests.</p>
+        <div class="main-canvas d-flex justify-content-center align-items-center flex-column mx-auto my-4" style="width: 20rem;">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+        <span>Please sign / Initial below</span>
+        <canvas id="canvas"></canvas>
+        <input type="hidden" id="imageData" name="imageData">
+        <a id="clear-button">Clear</a>
+        </div>
+        <div class="g-recaptcha main-recapture d-flex justify-content-center align-items-center flex-column mx-auto my-4" data-sitekey="6LfbPMQmAAAAADrA6r2Wr_sCQ_cJbR20Tu9U_cB4"></div>
+       <div> <button type="submit" style="margin-top: 2rem;" class="btn btn-primary">Submit</button></div>
+    </form>
+    <script>
+        
+        var canvas = new fabric.Canvas('canvas', {
+            isDrawingMode: true
+          });
+          
+        document.getElementById('clear-button').addEventListener('click', function() {
+            canvas.clear();
+          });
+
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+          
+            // Convert the canvas to an image
+            const imageData = canvas.toDataURL('image/png');
+          
+            // Update the hidden input field with the image data
+            document.getElementById('imageData').value = imageData;
+          
+            // Submit the form
+            this.submit();
+  
+    //    var form = document.getElementById('myForm');
+    //    var imageDataInput = document.getElementById('imageData');
+        
+       // form.addEventListener('submit', function(event) {
+          // Prevent the form from submitting normally
+       //   event.preventDefault();
+        
+          // Convert the canvas to a data URL
+       //   var imageData = canvas.toDataURL('image/png');
+        
+          // Update the hidden input field with the image data
+        //  imageDataInput.value = imageData;
+        
+          // Submit the form
+        //  form.submit();
+        });  
+    </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</div>
+
+{% endblock %}
